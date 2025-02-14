@@ -16,7 +16,7 @@ class VenueController extends GetxController {
       }
     } catch (e) {
       // print(e);
-      throw Exception('Failed to load data');
+      throw Exception('Something Went Worng!, Failed to load data!!');
     }
   }
 }
