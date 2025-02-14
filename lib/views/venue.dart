@@ -1,3 +1,4 @@
+import 'package:bandobasta_task/views/widgets/venue_card_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/venue_controller.dart';
@@ -19,8 +20,14 @@ class VenueView extends StatelessWidget {
           future: controller.fetchVenueData(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(
-                child: CircularProgressIndicator(),
+              return Center(
+                child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int index) {
+                    return const Card(
+                        margin: EdgeInsets.all(10), child: VenueCardShimmer());
+                  },
+                ),
               );
             } else if (snapshot.hasError) {
               return Center(child: Text('Error: ${snapshot.error}'));

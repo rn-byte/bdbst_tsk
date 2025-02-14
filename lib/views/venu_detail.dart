@@ -19,16 +19,9 @@ class VenueDetailsScreen extends StatelessWidget {
             venue.venueImagePaths.isNotEmpty
                 ? CarouselSlider(
                     options: CarouselOptions(
-                      autoPlay: false, // Enable auto-slide
-                      autoPlayInterval:
-                          const Duration(seconds: 3), // Time per slide
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 800), // Smooth animation
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      enlargeCenterPage: true, // Zoom effect
-                      enableInfiniteScroll: false, // Disable loop
-                      // aspectRatio: 16 / 9, // Adjust size
-                      // //viewportFraction: 0.8, // Show part of next image
+                      autoPlay: false,
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: false,
                     ),
                     items: venue.venueImagePaths.map((imageUrl) {
                       return ClipRRect(
